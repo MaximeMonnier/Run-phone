@@ -56,5 +56,22 @@ $(".button-group").on("click", "button", function(){
       },
     },
   });
+// Blogd owl carousel
+
+$("#blogs .owl-carousel").owlCarousel({
+  loop: true,
+  nav: false,
+  dots: true,
+  responsive: {
+    0: {
+      items: 1,
+    },
+    600: {
+      items: 3,
+    }, 
+  },
+});
+
 
 });
+
