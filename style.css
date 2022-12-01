@@ -6,6 +6,10 @@ button, button:focus {
   box-shadow: none !important;
 }
 
+a {
+  text-decoration: none;
+}
+
 /*  typography classes    */
 .font-mont {
   font-family: "Montserrat", cursive;
