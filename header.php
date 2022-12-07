@@ -40,6 +40,11 @@
     <link rel="stylesheet"
         href="./style.css">
 
+        <?php
+            //require functions file
+            require 'functions.php';
+        ?>
+
 </head>
 
 <body>
