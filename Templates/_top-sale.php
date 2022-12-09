@@ -1,6 +1,15 @@
 <?php
-    $product_shuffle = $product->getData();
+
     shuffle($product_shuffle);
+
+    //request method post
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+         if(isset($_POST['top_sale_submit'])){
+                    //call method addToCart
+            $Cart->addToCart($_POST['user_id'], $_POST['item_id']);
+        }
+
+    }
 ?>
         
         <!-- top sale -->
@@ -13,7 +22,7 @@
                     <?php foreach ($product_shuffle as $item) { ?>
                     <div class="item py-2">
                         <div class="product font-mont">
-                            <a href="#"><img src="<?php echo $item['item_image'] ?? "./assets/products/1.png"  ?>"
+                            <a href="<?php printf('%s?item_id=%s','product.php', $item['item_id']); ?>"><img src="<?php echo $item['item_image'] ?? "./assets/products/1.png"  ?>"
                                     alt="product1"
                                     class="img-fluid"></a>
                             <div class="text-center">
@@ -28,7 +37,11 @@
                                 <div class="price py-2">
                                     <span>$<?php echo $item['item_price'] ?? "Unknow" ?></span>
                                 </div>
-                                <button type="submit" class="btn btn-warning font-size-12">Ajouter au Panier</button>
+                               <form method="post">
+                                <input type="hidden" name="item_id" value="<?php echo $item['item_id'] ?? '1'; ?>">
+                                <input type="hidden" name="user_id" value="<?php echo 1; ?>">
+                               <button type="submit" name="top_sale_submit" class="btn btn-warning font-size-12">Ajouter au Panier</button>
+                               </form>
                             </div>
                         </div>
                     </div>
