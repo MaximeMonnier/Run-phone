@@ -70,7 +70,7 @@
         <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
             <div class="container-fluid">
                 <a class="navbar-brand"
-                    href="#">Run Phone</a>
+                    href="index.php">Run Phone</a>
                 <button class="navbar-toggler"
                     type="button"
                     data-bs-toggle="collapse"
@@ -111,10 +111,10 @@
                     </ul>
                     <form action="#"
                         class="font-size-14 font-robo">
-                        <a href="#"
+                        <a href="cart.php"
                             class="py-2 rounded-pill liens color-primary-bg">
                             <span class="font-size-16 px-2 text-white"><i class="fas fa-shopping-cart"></i></span>
-                            <span class="px-3 py-2 rounded-pill liens text-dark bg-light">0</span>
+                            <span class="px-3 py-2 rounded-pill liens text-dark bg-light"><?php echo count($product->getData('cart')); ?></span>
                         </a>
                     </form>
                 </div>
