@@ -10,6 +10,10 @@ ob_start();
     include "Templates/_cart-template.php";
     /* include carts*/ 
 
+    /* include whishliste*/ 
+    include "Templates/_wishlist_template.php";
+    /* include wishliste*/ 
+
     /* include new-phones section*/ 
     include "Templates/_new-phones.php";
     /* include new-phones section*/ 

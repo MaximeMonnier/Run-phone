@@ -54,7 +54,7 @@
                                                     <input type="hidden" value="<?php echo $item['item_id'] ?? 0 ; ?>" name="item_id">
                                                     <button type="submit" name="delete-cart-submit" class="btn font-mont text-danger px-3 border-right">Suprimer</button>
                                                     </form>
-                                                    <button type="submit" class="btn font-mont text-danger">Ajouter a ma liste</button>
+                                                    <button type="submit" class="btn font-mont text-danger">Ajouter a ma liste de souhaits</button>
                                                 </div>
                                             <!-- !product qty -->
 
