@@ -3,6 +3,12 @@
         if(isset($_POST['delete-cart-submit'])){
             $deleterecord = $Cart->deleteCart($_POST['item_id']);
         }
+
+         // save for later
+         if (isset($_POST['wishlist-submit'])){
+            $Cart->saveForLater($_POST['item_id']);
+        }
+
     }
 
 ?>            
@@ -51,10 +57,14 @@
                                                         <button data-id="<?php echo $item['item_id'] ?? 0?>"class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
                                                     </div>
                                                     <form method="post">
-                                                    <input type="hidden" value="<?php echo $item['item_id'] ?? 0 ; ?>" name="item_id">
-                                                    <button type="submit" name="delete-cart-submit" class="btn font-mont text-danger px-3 border-right">Suprimer</button>
+                                                        <input type="hidden" value="<?php echo $item['item_id'] ?? 0 ; ?>" name="item_id">
+                                                        <button type="submit" name="delete-cart-submit" class="btn font-mont text-danger px-3 border-right">Suprimer</button>
                                                     </form>
-                                                    <button type="submit" class="btn font-mont text-danger">Ajouter a ma liste de souhaits</button>
+
+                                                    <form method="post">
+                                                        <input type="hidden" value="<?php echo $item['item_id'] ?? 0 ; ?>" name="item_id">
+                                                        <button type="submit" name="wishlist-submit" class="btn font-mont text-danger">Ajouter a ma liste de souhaits</button>
+                                                    </form>
                                                 </div>
                                             <!-- !product qty -->
 
