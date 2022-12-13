@@ -18,9 +18,9 @@
                             <div class="col-sm-9">
                                 <?php
                                     
-                                    foreach ($product->getData('cart') as $item):
+                                    foreach ($product->getData('cart') as $item) :
                                         $cart = $product->getProduct($item['item_id']);
-                                        $subTotal[] = array_map(function($item){
+                                        $subTotal[] = array_map(function ($item){
                                 ?>
                                 <!-- cart item -->
                                     <div class="row border-top py-3 mt-3">
@@ -46,9 +46,9 @@
                                             <!-- product qty -->
                                                 <div class="qty d-flex pt-2">
                                                     <div class="d-flex font-robo w-25">
-                                                        <button class="qty-up border bg-light" data-id="pro1"><i class="fas fa-angle-up"></i></button>
-                                                        <input type="text" data-id="pro1" class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
-                                                        <button data-id="pro1" class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
+                                                        <button class="qty-up border bg-light" data-id="<?php echo $item['item_id'] ?? 0?>"><i class="fas fa-angle-up"></i></button>
+                                                        <input type="text" data-id="<?php echo $item['item_id'] ?? 0?>"class="qty_input border px-2 w-100 bg-light" disabled value="1" placeholder="1">
+                                                        <button data-id="<?php echo $item['item_id'] ?? 0?>"class="qty-down border bg-light"><i class="fas fa-angle-down"></i></button>
                                                     </div>
                                                     <form method="post">
                                                     <input type="hidden" value="<?php echo $item['item_id'] ?? 0 ; ?>" name="item_id">
@@ -61,8 +61,8 @@
                                         </div>
 
                                         <div class="col-sm-2 text-right">
-                                            <div class="font-size-20 text-danger font-mont">
-                                                $<span class="product_price"><?php echo $item ['item_price'] ?? "Unknow" ?></span>
+                                            <div class="font-size-20 text-danger font-robo">
+                                                $<span class="product_price" data-id ="<?php echo $item['item_id'] ?? '0'; ?>"><?php echo $item['item_price'] ?? 0; ?></span>
                                             </div>
                                         </div>
                                     </div>
