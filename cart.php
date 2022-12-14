@@ -6,12 +6,12 @@ ob_start();
 
 <?php
 
-    /* include carts*/ 
-    include "Templates/_cart-template.php";
-    /* include carts*/ 
+    /* include cart item if it's not empty*/ 
+    count($product->getData('cart')) ? include "Templates/_cart-template.php":include "Templates/notFound/_cart_notFound.php";
+    /* ! include cart item if it's not empty*/ 
 
     /* include whishliste*/ 
-    include "Templates/_wishlist_template.php";
+    count($product->getData('wishlist')) ? include "Templates/_wishlist_template.php":include "Templates/notFound/_wishlist_notFound.php";
     /* include wishliste*/ 
 
     /* include new-phones section*/ 

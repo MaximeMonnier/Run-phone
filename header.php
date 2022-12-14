@@ -67,7 +67,7 @@
 
         <!-- Primary Navigation -->
 
-        <nav class="navbar navbar-expand-lg navbar-dark color-second-bg">
+        <nav class="navbar navbar-expand-lg navbar-dark color-second-bg" style ="height:70px;">
             <div class="container-fluid">
                 <a class="navbar-brand"
                     href="index.php">Run Phone</a>
