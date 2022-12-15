@@ -15,5 +15,6 @@ if(!$_SESSION['mdp']){
 <body>
     <a href="membres.php">Afficher tout les membres</a>
     <a href="publier-article.php">Publier un nouvelle article</a>
+    <a href="article.php">Affiher tous les article</a>
 </body>
 </html>

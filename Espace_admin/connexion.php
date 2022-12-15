@@ -42,7 +42,7 @@ if(isset($_POST['valider'])){
 
 </head>
 <body>
-    <form method="post">
+    <form method="post" align="center" class="mt-3">
         <input type="text" name="pseudo" autocomplete="off">
         <br>
         <input type="password" name="mdp">

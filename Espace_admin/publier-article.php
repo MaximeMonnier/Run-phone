@@ -8,10 +8,16 @@ if(!$_SESSION['mdp']){
 
 if(isset($_POST['envoi'])){
 
-    if(!empty($_POST['titre']) AND !empty($_POST['descritpion'])){
+    if(!empty($_POST['titre']) AND !empty($_POST['description'])){
+        $titre = htmlspecialchars($_POST['titre']);
+        $description = nl2br(htmlspecialchars($_POST['description']));
 
+        $insererArticle = $bdd->prepare('INSERT INTO artcles(titre,description) VALUES(?,?)');
+        $insererArticle->execute(array($titre, $description));
+
+        echo "L'article a bien été envoyé";
     }else{
-        echo "Veuillez compléter tous les champs..."
+        echo "Veuillez compléter tous les champs...";
     }
 }
 ?>
@@ -25,13 +31,14 @@ if(isset($_POST['envoi'])){
     <title>Publier un article</title>
 </head>
 <body>
-    <form method="post">
+    <form method="post" align="center">
         <input type="text" name="titre">
         <br>
         <textarea name="description"></textarea>
         <br>
         <input type="submit" name="envoi">
     </form>
+    <a href="admin.php">Retour au tableau de bord</a>
     
 </body>
 </html>
