@@ -1,3 +1,11 @@
+<?php
+session_start();
+$bdd = new PDO ('mysql:host=localhost;dbname=shopee;','root','');
+if(!$_SESSION['mdp']){
+    header('Location: connexion.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -44,7 +52,7 @@
 
 <body>
     <section id="head">
-        <ul class="nav justify-content-end bg-warning">
+        <ul class="nav py-3 justify-content-center bg-warning">
             <li class="nav-item">
          <a class="nav-link active text-secondary" aria-current="page" href="#">Active</a>
         </li>
@@ -60,12 +68,28 @@
         </ul>
     </section>
 
-    <section id="colone-left">
-      <ul>
-        <li class="liens"><a href="product.php">Afficher les produits</a></li>
-        <li class="liens"><a href="#">Afficher les produits</a></li>
-      </ul>
-    </section>
+    <main id="main">
+        <section id="colone-left">
+        <ul>
+            <li class="liens"><a href="product.php">Afficher les produits</a></li>
+            <li class="liens"><a href="#">Afficher les produits</a></li>
+        </ul>
+        </section>
+
+        <!-- afficher tout les membres -->
+        <?php
+        $recupProduct = $bdd->query('SELECT * FROM product');
+            while($product = $recupProduct->fetch()){
+                ?>
+                <section id="colone-right">
+                    <p><?= $product['item_id'] ;?></p>
+                </section>
+                <?php
+            }
+        ?>
+        
+        <!--  fin afficher tout les membres -->
+    </main>
 
     <!-- JavaScript Bundle with Popper bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
