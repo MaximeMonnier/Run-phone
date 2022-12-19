@@ -64,7 +64,7 @@ a {
   background: #FFD289;
 }
 
-/*  top sale template   */
+/*Banner-ads Templates*/ /*  top sale template   */
 #top-sale .owl-carousel .item .product a {
   overflow: hidden !important;
 }
@@ -84,7 +84,7 @@ a {
 }
 #top-sale .owl-carousel .owl-nav button.owl-prev span,
 #top-sale .owl-carousel .owl-nav button.owl-next span {
-  font-size: 35px !important;
+  font-size: 50px !important;
   color: #003859 !important;
   padding: 0 1rem !important;
 }
@@ -102,4 +102,5 @@ a {
 #special-price .grid .grid-item {
   margin-right: 0.8rem;
   margin-top: 1.5rem;
-}/*# sourceMappingURL=style.css.map */
+}
+
