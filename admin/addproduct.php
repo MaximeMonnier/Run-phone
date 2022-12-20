@@ -77,6 +77,25 @@ if(!$_SESSION['mdp']){
         </ul>
         </section>
 
+        <?php
+            if(isset($_POST['envoie'])){
+                if(!empty($_POST['marque']) AND !empty($_POST['titre']) AND !empty($_POST['prix']) AND !empty($_POST['image']) AND !empty($_POST['date'])){
+                    $marque = htmlspecialchars($_POST['marque']);
+                    $titre = htmlspecialchars($_POST['titre']);
+                    $prix = htmlspecialchars($_POST['prix']);
+                    $image = htmlspecialchars($_POST['image']);
+                    $date = htmlspecialchars($_POST['date']);
+
+                    $inserProduct = $bdd->prepare('INSERT INTO product(item_brand,item_name,item_price,item_image,item_register) VALUES(?,?,?,?,?)');
+                    $inserProduct->execute(array($marque,$titre,$prix,$image,$date));
+
+                    echo "Le Produit a bien été ajouter";
+                }else{
+                    echo "Veuillez Ajouter un titre et une marque";
+                }
+            }
+        ?>
+
         <section class="colone-right">
             <form method="post" class="form">
                 <label for="marque">Marque</label>
@@ -86,7 +105,7 @@ if(!$_SESSION['mdp']){
                 <input type="text" name="titre" id="titre">
                 <br>
                 <label for="prix">Prix</label>
-                <input type="text" name="pirx" id="prix">
+                <input type="text" name="prix" id="prix">
                 <br>
                 <label for="image">Image</label>
                 <input type="text" name="image" id="image">
@@ -94,7 +113,7 @@ if(!$_SESSION['mdp']){
                 <label for="date">Date</label>
                 <input type="text" name="date" id="date">
                 <br>
-                <input type="submit">
+                <input type="submit" name="envoie">
             </form>
         </section>
     </main>
