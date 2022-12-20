@@ -25,5 +25,24 @@ ul,li{
     color: red;
     padding-top: 100px;
 }
+.formulaire{
+    padding: 15px;
+}
+.lab{
+    margin: 10px;
+    display: flex;
+    justify-content: end;
+}
+.inp{
+    display: flex;
+    justify-content: end;
+}
+.val-btn{
+    width: 190px;
+    background: rgb(255,193,7);
+    color: black;
+    height: 40px;
+    border: none;
+}
 
 /* modife pour la page add product bdd*/

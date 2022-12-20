@@ -97,23 +97,23 @@ if(!$_SESSION['mdp']){
         ?>
 
         <section class="colone-right">
-            <form method="post" class="form">
-                <label for="marque">Marque</label>
-                <input type="text" name="marque" id="marque">
+            <form method="post" class="formulaire">
+                <label for="marque" class="lab">Marque</label>
+                <input type="text" name="marque" id="marque" class="inp">
                 <br>
-                <label for="titre">Titre</label>
-                <input type="text" name="titre" id="titre">
+                <label for="titre"class="lab">Titre</label>
+                <input type="text" name="titre" id="titre"class="inp">
                 <br>
-                <label for="prix">Prix</label>
-                <input type="text" name="prix" id="prix">
+                <label for="prix"class="lab">Prix</label>
+                <input type="text" name="prix" id="prix"class="inp">
                 <br>
-                <label for="image">Image</label>
-                <input type="text" name="image" id="image">
+                <label for="image"class="lab">Image</label>
+                <input type="text" name="image" id="image"class="inp">
                 <br>
-                <label for="date">Date</label>
-                <input type="text" name="date" id="date">
+                <label for="date"class="lab">Date</label>
+                <input type="text" name="date" id="date"class="inp">
                 <br>
-                <input type="submit" name="envoie">
+                <input type="submit" name="envoie" class="val-btn">
             </form>
         </section>
     </main>

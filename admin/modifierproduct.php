@@ -13,24 +13,25 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
         $image = $productinfo['item_image'];
         $date = $productinfo['item_register'];
 
-        if(isset($_POST['envoie'])){
+        if(isset($_POST['valider'])){
             $marque_saisie = htmlspecialchars($_POST['marque']);
             $titre_saisie = htmlspecialchars($_POST['titre']);
             $prix_saisie = htmlspecialchars($_POST['prix']);
             $image_saisie = htmlspecialchars($_POST['image']);
             $date_saisie = htmlspecialchars($_POST['date']);
     
-            $updateproduct = $bdd->prepare('UPDATE product SET item_brand = ? AND item_name = ? AND item_price = ? AND item_image = ? AND item_register = ?WHERE item_id = ?');
+            $updateproduct = $bdd->prepare('UPDATE product SET item_brand = ? , item_name = ? , item_price = ? , item_image = ? , item_register = ? WHERE item_id = ?');
             $updateproduct->execute(array($marque_saisie,$titre_saisie,$prix_saisie,$image_saisie,$date_saisie,$getid));
 
             header('Location: product.php');
         }
+
     }else{
         echo "Aucun produits trouver";
     }
 
-}else{
-    echo "Aucun identifiant trouver";
+    }else{
+        echo "Aucun identifiant trouver";
 }
 ?>
 
@@ -106,23 +107,23 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
         </section>
 
         <section class="colone-right">
-            <form method="post" class="form">
-                <label for="marque">Marque</label>
-                <input type="text" name="marque" id="marque" value="<?= $marque ;?>">
+            <form method="post" class="formulaire">
+                <label for="marque" class="lab">Marque</label>
+                <input type="text" name="marque" class="inp" id="marque" value="<?= $marque ;?>">
                 <br>
-                <label for="titre">Titre</label>
-                <input type="text" name="titre" id="titre"value="<?= $titre;?>">
+                <label for="titre" class="lab">Titre</label>
+                <input type="text"class="inp" name="titre" id="titre"value="<?= $titre;?>">
                 <br>
-                <label for="prix">Prix</label>
-                <input type="text" name="prix" id="prix"value="<?= $prix;?>">
+                <label for="prix" class="lab">Prix</label>
+                <input type="text"class="inp" name="prix" id="prix"value="<?= $prix;?>">
                 <br>
-                <label for="image">Image</label>
-                <input type="text" name="image" id="image"value="<?= $image;?>">
+                <label for="image" class="lab">Image</label>
+                <input type="text"class="inp" name="image" id="image"value="<?= $image;?>">
                 <br>
-                <label for="date">Date</label>
-                <input type="text" name="date" id="date"value="<?= $date;?>">
+                <label for="date" class="lab">Date</label>
+                <input type="text" name="date" class="inp" id="date"value="<?= $date;?>">
                 <br>
-                <input type="submit" name="envoie">
+                <input type="submit" name="valider" class="val-btn">
             </form>
         </section>
     </main>
