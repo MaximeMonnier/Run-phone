@@ -1,3 +1,11 @@
+<?php
+session_start();
+$bdd = new PDO ('mysql:host=localhost;dbname=shopee;','root','');
+if(!$_SESSION['mdp']){
+    header('Location: connexion.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -7,7 +15,7 @@
         content="IE=edge">
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Ajouter un article</title>
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -38,34 +46,58 @@
     <!-- Custom CSS file -->
 
     <link rel="stylesheet"
-        href="../css/home.css">
+        href="../css/addproduct.css">
 
 </head>
 
 <body>
+
     <section id="head">
         <ul class="nav justify-content-end bg-warning">
-            <li class="nav-item">
-         <a class="nav-link active text-secondary" aria-current="page" href="#">Active</a>
+                <li class="nav-item">
+        <a class="nav-link active text-secondary" aria-current="page" href="#">Active</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">Link</a>
+                <a class="nav-link text-secondary" href="#">Link</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">Link</a>
+                <a class="nav-link text-secondary" href="#">Link</a>
         </li>
         <li class="nav-item">
-            <a href="logout.php" class="nav-link text-secondary">Deconnexion</a>
+                <a href="logout.php" class="nav-link text-secondary">Deconnexion</a>
         </li>
         </ul>
     </section>
 
-    <section id="colone-left">
-      <ul>
-        <li class="liens"><a href="product.php">Afficher les produits</a></li>
-        <li class="liens"><a href="blog.php">Afficher les blogs</a></li>
-      </ul>
-    </section>
+    <main id="main">
+        <section id="colone-left">
+        <ul>
+            <li class="liens"><a href="product.php">Afficher les produits</a></li>
+            <li class="liens"><a href="blog.php">Afficher les blogs</a></li>
+        </ul>
+        </section>
+
+        <section class="colone-right">
+            <form method="post" class="form">
+                <label for="marque">Marque</label>
+                <input type="text" name="marque" id="marque">
+                <br>
+                <label for="titre">Titre</label>
+                <input type="text" name="titre" id="titre">
+                <br>
+                <label for="prix">Prix</label>
+                <input type="text" name="pirx" id="prix">
+                <br>
+                <label for="image">Image</label>
+                <input type="text" name="image" id="image">
+                <br>
+                <label for="date">Date</label>
+                <input type="text" name="date" id="date">
+                <br>
+                <input type="submit">
+            </form>
+        </section>
+    </main>
 
     <!-- JavaScript Bundle with Popper bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

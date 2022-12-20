@@ -6,13 +6,17 @@ a{
     display: flex;
 }
 #colone-left{
-    height: 1000px;
-    width: 20%;
+    height: auto;
+    width: 50%;
     background-color: rgb(255,193,7);
+    display: inline-block;
+
 }
 #colone-right{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    height: auto;
+    border: solid 1px purple;
 }
 ul,li{
  list-style: none;
@@ -23,6 +27,11 @@ ul,li{
     color: red;
     padding-top: 100px;
 }
-.colo{
+.displaybdd{
     color: red;
+    border: solid 3px black;
+    padding: 5px;
+    border-radius: 3px;
+    margin: 15px;
+    width: 300px;
 }

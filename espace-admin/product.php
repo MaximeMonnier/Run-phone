@@ -46,7 +46,7 @@ if(!$_SESSION['mdp']){
     <!-- Custom CSS file -->
 
     <link rel="stylesheet"
-        href="../css/home.css">
+        href="../css/product.css">
 
 </head>
 
@@ -72,21 +72,28 @@ if(!$_SESSION['mdp']){
         <section id="colone-left">
         <ul>
             <li class="liens"><a href="product.php">Afficher les produits</a></li>
-            <li class="liens"><a href="#">Afficher les produits</a></li>
+            <li class="liens"><a href="addproduct.php">Ajouter produits</a></li>
         </ul>
         </section>
 
         <!-- afficher tout les membres -->
+        <section id="colone-right">
         <?php
         $recupProduct = $bdd->query('SELECT * FROM product');
             while($product = $recupProduct->fetch()){
                 ?>
-                <section id="colone-right">
-                    <p><?= $product['item_id'] ;?></p>
-                </section>
-                <?php
+                    <div class="displaybdd">
+                        <p class="itembdd"><?= $product['item_id'] ;?></p>
+                        <p class="itembdd"><?= $product['item_brand'] ;?></p>
+                        <p class="itembdd"><?= $product['item_name'] ;?></p>
+                        <p class="itembdd"><?= $product['item_price'] ;?></p>
+                        <img src="<?= $product['item_image'] ?? "../assets/products/1.png" ;?>" alt="product" class="img-fluide">
+                        <p class="itembdd"><?= $product['item_register'] ;?></p>
+                    </div>
+                    <?php
             }
-        ?>
+            ?>
+        </section>
         
         <!--  fin afficher tout les membres -->
     </main>
