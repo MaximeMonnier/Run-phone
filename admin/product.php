@@ -89,6 +89,9 @@ if(!$_SESSION['mdp']){
                         <p class="itembdd"><?= $product['item_price'] ;?></p>
                         <img src="<?= $product['item_image'] ?? "../assets/products/1.png" ;?>" alt="product" class="img-fluide">
                         <p class="itembdd"><?= $product['item_register'] ;?></p>
+                        <a href="deletearticle.php?id=<?= $product['item_id'];?>"><button class="delete-btn">Supprimer Produits</button>
+                        <br></a>
+                        <a href="modifierproduct.php?id=<?= $product['item_id'] ?>;"><button class="modifier-btn">Modifier Produits</button></a>
                     </div>
                     <?php
             }

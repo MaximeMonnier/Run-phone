@@ -28,10 +28,20 @@ ul,li{
     padding-top: 100px;
 }
 .displaybdd{
-    color: red;
+    color: blue;
     border: solid 3px black;
-    padding: 5px;
+    padding: 10px;
     border-radius: 3px;
     margin: 15px;
     width: 300px;
+}
+.delete-btn{
+    background: red;
+    color: white;
+    margin-bottom: 15px;
+}
+.modifier-btn{
+    background: green;
+    color: white;
+    margin-bottom: 15px;
 }
