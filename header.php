@@ -55,6 +55,8 @@
             <p class="font-robo font-size-10 text-black-50 m-0">Maxime Monnier 48 Chemin banoirs Saint-Leu , La Réunion
                 97436 </p>
             <div class="font-robo font-size-14px">
+                <a href="./admin/connexion.php"
+                    class=" liens px-3 border-right border-left text-dark">Login admin</a>
                 <a href="#"
                     class=" liens px-3 border-right border-left text-dark">Login</a>
                 <a href="#"

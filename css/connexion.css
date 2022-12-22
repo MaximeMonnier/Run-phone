@@ -1,5 +1,4 @@
 
-
   /*connexion templates*/
   #connexion .titre {
     margin: auto;
@@ -14,7 +13,7 @@
     align-items: center;
     width: 350px;
     height: 350px;
-    background-color: rgb(117, 17, 246);
+    background-color: rgb(255,193,7);
     border-radius: 10px;
   }
   .img1{
@@ -24,11 +23,7 @@
   .inp1{
     margin:15px;
   }
-  .lab1{
-    color: white;
-  }
   .lab2{
-    color: white;
     margin-right: 8px;
   }
   .btn{

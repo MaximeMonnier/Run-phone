@@ -75,29 +75,26 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
     <!-- Custom CSS file -->
 
     <link rel="stylesheet"
-        href="../css/addproduct.css">
+        href="../css/modifierproduct.css">
 
 </head>
 
 <body>
 
-    <section id="head">
-        <ul class="nav justify-content-end bg-warning">
-                <li class="nav-item">
-        <a class="nav-link active text-secondary" aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-                <a class="nav-link text-secondary" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-                <a class="nav-link text-secondary" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-                <a href="logout.php" class="nav-link text-secondary">Deconnexion</a>
-        </li>
-        </ul>
+  <!--  navigation -->
+  <section id="head">
+        <nav class="navbar bg-warning border-bottom border-dark">
+                <div class="container-fluid">
+                <a href="home.php" class="navbar-brand"><img src="./assets/admin-pic/logo_1900X1350.png" class="image"></a>
+                <div class="d-flex">
+                <button class="btn fs-4"><a href="connexion.php">Deconnexion</a></button>
+                </div>
+            </div>
+        </nav>
     </section>
+    <!-- fin navigation -->
 
+    <!-- colone de navviagtion -->
     <main id="main">
         <section id="colone-left">
         <ul>
@@ -105,7 +102,9 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
             <li class="liens"><a href="blog.php">Afficher les blogs</a></li>
         </ul>
         </section>
+       <!--fin colone de navviagtion -->
 
+       <!-- formulaire de modification -->
         <section class="colone-right">
             <form method="post" class="formulaire">
                 <label for="marque" class="lab">Marque</label>
@@ -126,6 +125,19 @@ if(isset($_GET['id']) AND !empty($_GET['id'])){
                 <input type="submit" name="valider" class="val-btn">
             </form>
         </section>
+        <!-- fin formulaire de modification -->
+
+        <!-- affichage produit a mofidier -->
+        <section id="productbdd">
+            <div class="displaybdd">
+                <p class="itembdd"><?= $marque;?></p>
+                <p class="itembdd"><?= $titre ;?></p>
+                <p class="itembdd"><?= $prix;?></p>
+                <img src="<?= $image ?? "../assets/products/1.png" ;?>" alt="product" class="imagebdd">
+                <p class="itembdd"><?= $date ;?></p>
+            </div>
+        </section>
+        <!-- fin affichage produit a mofidier -->
     </main>
 
     <!-- JavaScript Bundle with Popper bootstrap-->

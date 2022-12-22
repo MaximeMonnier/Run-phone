@@ -17,6 +17,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     height: auto;
+    margin-right: 20px;
 }
 .liens{
     text-decoration: none;
@@ -32,6 +33,7 @@ a{
 /*  partie formulaire de mofification*/
 .formulaire{
     padding: 15px;
+    margin: 0 100px;
 }
 .lab{
     margin: 10px;
@@ -53,6 +55,16 @@ a{
 
 /* affichage des donne du produit  mofifier */
 
+#productbdd{
+    margin-top: 25px;
+    height: 357px;
+    width: 220px;
+    border: solid 2px black;
+    padding: 15px;
+}
+.itembdd{
+    margin-top: 25px;
+}
 .imagebdd{
     height: 50px;
     width: 50px;

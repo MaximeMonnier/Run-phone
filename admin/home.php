@@ -1,3 +1,11 @@
+<?php
+session_start();
+$bdd = new PDO ('mysql:host=localhost;dbname=shopee;','root','');
+if(!$_SESSION['mdp']){
+    header('Location: connexion.php');
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -43,29 +51,38 @@
 </head>
 
 <body>
+    <!--  navigation -->
     <section id="head">
-        <ul class="nav justify-content-end bg-warning">
-            <li class="nav-item">
-         <a class="nav-link active text-secondary" aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-secondary" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-            <a href="logout.php" class="nav-link text-secondary">Deconnexion</a>
-        </li>
-        </ul>
+        <nav class="navbar bg-warning border-bottom border-dark">
+                <div class="container-fluid">
+                <a href="home.php" class="navbar-brand"><img src="./assets/admin-pic/logo_1900X1350.png" class="image"></a>
+                <div class="d-flex">
+                <button class="btn fs-4"><a href="connexion.php">Deconnexion</a></button>
+                </div>
+            </div>
+        </nav>
     </section>
+    <!-- fin navigation -->
 
-    <section id="colone-left">
-      <ul>
-        <li class="liens"><a href="product.php">Afficher les produits</a></li>
-        <li class="liens"><a href="blog.php">Afficher les blogs</a></li>
-      </ul>
-    </section>
+    <main id="main">
+
+        <section id="colone-left">
+        <ul>
+            <li class="liens"><a href="product.php">Afficher les produits</a></li>
+            <li class="liens"><a href="blog.php">Afficher les article de blog</a></li>
+            <li class="liens"><a href="descriptionproduit.php">Modier page produit</a></li>
+            <li class="liens"><a href="../index.php">Retour a la boutique</a></li>
+        </ul>
+        </section>
+
+        <!-- afficher tout les membres -->
+        <section id="colone-right">
+            <div class="contenu">
+                <h1>Bonjour Bienvenur sur la page back office</h1>
+            </div>
+        </section>        
+        <!--  fin afficher tout les membres --> 
+    </main>
 
     <!-- JavaScript Bundle with Popper bootstrap-->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
