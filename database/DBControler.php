@@ -3,10 +3,10 @@
 class DBController{
     //protect variable that can access only in the class
     //database connection properties
-protected $host = 'nos.h.filess.io';
-protected $user = 'RunPhone_strawagain';
-protected $password = '94251c8b8fb33695e5e91f5b1ae3c08e80f45222';
-protected $database = 'RunPhone_strawagain';
+protected $host = 'localhost';
+protected $user = 'root';
+protected $password = '';
+protected $database = 'shopee';
 
     //connection property
 public $con = null;
