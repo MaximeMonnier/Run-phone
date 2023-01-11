@@ -1,13 +1,13 @@
 <?php
 ob_start();
     //include header php file 
-    include "header.php";
+    include "./header.php";
 ?>
 
 
 <?php
     /* include banner area*/ 
-    include "Templates/_banner-area.php";
+    include "./Templates/_banner-area.php";
     /* include banner area*/ 
 
 
